@@ -1,31 +1,45 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Upptime configuration for status.zeronotes.is (architecture 9.1).
+# Lives in its own repository Llamazing-Digital-Engineering/zeronotes-status, created from the template
+# https://github.com/upptime/upptime ; see README.md in this directory.
+owner: Llamazing-Digital-Engineering
+repo: zeronotes-status
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  # Interim until the first deployment of ZeroNotes 2: only the running app (ZeroNotes 1) is checked, so that
+  # the status page does not report outages for things that are not live yet. At the first deployment this list
+  # becomes the one in llamazing-digital-engineering/zeronotes, deploy/upptime/.upptimerc.yml
+  # (app.zeronotes.is/api/health and zeronotes.is).
+  - name: App
+    url: https://app.zeronotes.is
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+
+# Every 5 minutes; failures open an issue assigned to Björn (GitHub notifies by mail).
+assignees:
+  - BjarneBerlin
+workflowSchedule:
+  uptime: "*/5 * * * *"
+  responseTime: "0 */6 * * *"
+  graphs: "0 0 * * *"
+  summary: "0 0 * * *"
+  staticSite: "0 1 * * *"
+  updateTemplate: "0 0 * * 0"
+  updates: "0 3 * * *"
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  cname: status.zeronotes.is
+  name: ZeroNotes Status
+  introTitle: "ZeroNotes status"
+  introMessage: "Availability of app.zeronotes.is and zeronotes.is, checked every five minutes from GitHub Actions."
   navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+    - title: ZeroNotes
+      href: https://zeronotes.is
+    - title: Source
+      href: https://github.com/llamazing-digital-engineering/zeronotes
+  theme: light
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+i18n:
+  up: Operational
+  down: Down
+  degraded: Degraded
