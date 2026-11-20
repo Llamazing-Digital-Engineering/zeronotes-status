@@ -4,17 +4,19 @@
     "url": "https://app.zeronotes.is",
     "icon": "https://icons.duckduckgo.com/ip3/app.zeronotes.is.ico",
     "slug": "app",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
     "time": 572,
     "timeDay": 613,
-    "timeWeek": 560,
+    "timeWeek": 566,
     "timeMonth": 572,
     "timeYear": 572,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-11-20": 0
+    }
   }
 ]
